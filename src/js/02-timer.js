@@ -3,10 +3,10 @@ import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
 const inputField = document.querySelector('#datetime-picker');
-console.log(inputField);
+
 
 const startBtn = document.querySelector('button[data-start]');
-console.log(startBtn);
+
 startBtn.disabled = true;
 
 let selectedDates = 0;
@@ -53,7 +53,7 @@ startBtn.addEventListener("click", () => {
     timer = setInterval(() => {
         
         remainingTime -= 1000
-        console.log(remainingTime)
+       
         if (remainingTime < 1000) {
             clearInterval(timer)
             
