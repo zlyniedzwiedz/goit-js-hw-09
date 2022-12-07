@@ -61,7 +61,8 @@ startBtn.addEventListener("click", () => {
             remainingHours.innerHTML = "00"
             remainingMinutes.innerHTML = "00"
             remainingSeconds.innerHTML = "00"
-            return;
+            return Notiflix.Notify.success("BOMB HAS EXPLODED SUCCESFULLY!")
+            
         }
         showTime()
         }, 1000)
