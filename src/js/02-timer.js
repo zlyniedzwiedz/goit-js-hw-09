@@ -50,6 +50,7 @@ const options = {
 
 startBtn.addEventListener("click", () => {
     startBtn.disabled = true
+    inputField.disabled = true
     timer = setInterval(() => {
         
         remainingTime -= 1000
