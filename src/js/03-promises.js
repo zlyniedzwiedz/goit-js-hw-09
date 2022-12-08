@@ -10,6 +10,7 @@ function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const shouldResolve = Math.random() > 0.3;
+      
       if (shouldResolve) {
         resolve({ position, delay });
       } else {
@@ -20,8 +21,9 @@ function createPromise(position, delay) {
 }
 
 submitBtn.addEventListener('click', event => {
+  
   event.preventDefault();
-
+  submitBtn.disabled = true
   // Correct values check
   if (inputAmount.value < 1) {
     return Notiflix.Notify.info('Wprowadź liczbę większą niż 0 w pole Amount');
@@ -37,6 +39,7 @@ submitBtn.addEventListener('click', event => {
 
   // Working bits and pieces
   for (let i = 1; i <= inputAmount.value; i++) {
+    
     createPromise(i, delay)
       .then(({ position, delay }) => {
         return Notiflix.Notify.success(
@@ -49,5 +52,12 @@ submitBtn.addEventListener('click', event => {
         );
       });
     delay = delay + Number(inputStep.value);
+    
   }
+
+  setTimeout(() => {
+    submitBtn.disabled = false;
+  }, delay);
 });
+
+
