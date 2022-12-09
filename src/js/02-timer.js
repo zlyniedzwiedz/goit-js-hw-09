@@ -56,13 +56,15 @@ startBtn.addEventListener("click", () => {
         remainingTime -= 1000
        
         if (remainingTime < 1000) {
-            clearInterval(timer)
-            
+            startBtn.disabled = false;
+            inputField.disabled = false;
+            clearInterval(timer);
             remainingDays.innerHTML = "00"
             remainingHours.innerHTML = "00"
             remainingMinutes.innerHTML = "00"
             remainingSeconds.innerHTML = "00"
-            return Notiflix.Notify.success("BOMB HAS EXPLODED SUCCESFULLY!")
+            return Notiflix.Notify.success("BOMB HAS EXPLODED SUCCESFULLY!");
+            
             
         }
         showTime()
